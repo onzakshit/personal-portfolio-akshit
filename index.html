@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="UX-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b22c3adc21.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/cd33akshit3dxx-removebg-preview.png" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>+
+                <p> Software Developer</p>
+                <h1>Hi I'm <span> Akshit</span><br>From kharar</h1>
+            </div>
+    </div>
+</div>
+<!-------skills---------->
+   <div id="skills">
+       <div class="container">
+           <h1 class="sub-title"> My Skills</h1>
+            <div class="skills-list">
+                <div>
+               <i class="fa-brands fa-github fa-beat-fade"></i>
+               <h2>Github</h2>
+               <p>It's an platform which allows you to   host your code . In Github there are many commands like git init, git commit and git status , git branch.</p>
+               </div>
+               <div>
+               <i class="fa-solid fa-crop fa-beat-fade"></i>
+               <h2>MongoDb</h2>
+               <p>MongoDb  is a document database and there are some commands of Mongo like show dbs, use DATABASE_NAME, db.dropDatabase(),show collections.</p>
+               </div>
+               <div>
+               <i class="fa-brands fa-uncharted fa-beat-fade"></i>
+               <h2>Web Development</h2>
+               <p>The tasks associated with creating, building , and maintaining websites and web applications that run online on a browser using languages like HTML , CSS , Javascript.</p>
+           </div>
+     </div>
+ </div>
+</div>
+<!------------about----------->
+<div id="about">
+    <div class="conatiner">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="img32.jpg.jpg">
+            </div>
+       <div class="about-col-2">
+        <h1 class="sub-title">About Me</h1>
+        <p> Hi, My Name is Akshit and I am doing BCA from Rayat Bahra University, Sunstone kharar and I am very fond of coding and learning</p>
+        <div class="tab-titles">
+            <p class="tab-titles active-link"> Education</p>
+            </div>
+            <div class="tab-contents">
+                <ul>
+                    <li><span> Class 10th</span><br>From seven star International School </li>
+                    <li><span>Class 12th</span><br>From Govt. Model Senior Secondary School </li>
+                    <li><span>BCA</span><br>From Rayat Bahra University Sunstone</li>
+                </ul>
+            </div>
+       </div>
+       <!------------Contact----------->
+   <div id ="contact">
+    <div id="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>onzakshitbanyal@gmail.com</p>
+                <p><i class="fa-solid fa-square-phone"></i>9015141412</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/akshit-banyal-492427272/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/onz_akshit_banyal"> <i class="fab fa-instagram"></i></a>
+                       
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="contact-center">
+        <form name="submit-to-google-sheet">
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="email" name="Email" placeholder="Your Email" required>   
+        <textarea name="Message" rows="6"placeholder="Your Message"></textarea>
+        <button type="submit" class="btn btn">submit</button>
+        </form>
+        <span id="msg"></span>
+    </div>
+   </div>
+
+    </div>
+</div>
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzDtrkPAGUbWgrr9Jds69OnXrpZzYlMszCu_p9tA657nbP192rxd2_cKrL46zjJDBuRww/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML =""
+        },5000)
+        form.reset()
+    })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+    
+
+</body> 
+</html>
